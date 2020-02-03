@@ -55,21 +55,21 @@ public class YandexMarketMobileSectionTests {
 
         // 2. Filter by brand: Xiaomi / OPPO
         // 2.1. Open search field by brand
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("._178jz2CyDL :nth-child(4) button"))).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(":nth-child(3) ._178jz2CyDL :nth-child(2) footer button"))).click();
 
         // 2.2. Find and select brand "Xiaomi"
         driver.findElement(By.cssSelector("[id*=suggester]")).sendKeys("Xiaomi");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[name*='Xiaomi']")));
-        driver.findElement(By.cssSelector("._178jz2CyDL > div:nth-child(4) span")).click();
+        driver.findElement(By.cssSelector(":nth-child(3) ._178jz2CyDL :nth-child(2) fieldset span")).click();
 
         // 2.3. Find and select brand "OPPO"
         driver.findElement(By.cssSelector("[id*=suggester]")).clear();
         driver.findElement(By.cssSelector("[id*=suggester]")).sendKeys("OPPO");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[name*='OPPO']")));
-        driver.findElement(By.cssSelector("._178jz2CyDL > div:nth-child(4) span")).click();
+        driver.findElement(By.cssSelector(":nth-child(3) ._178jz2CyDL :nth-child(2) fieldset span")).click();
 
         // 2.4. Verifying that checkboxes is selected
-        driver.findElement(By.cssSelector("._178jz2CyDL :nth-child(4) button")).click();
+        driver.findElement(By.cssSelector(":nth-child(3) ._178jz2CyDL :nth-child(2) footer button")).click();
         // 2.4.1. use the "isSelected" method
         boolean xiaomiCheckbox = driver.findElement(By.cssSelector("[name*='Xiaomi']")).isSelected();
         Assert.assertTrue(xiaomiCheckbox);
